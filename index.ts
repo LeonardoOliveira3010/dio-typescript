@@ -1,3 +1,6 @@
+import $ from 'jquery'
+
+
 // Tipando o tipo do parametro
 function soma (a: number, b: number){
     return a + b
@@ -77,3 +80,50 @@ function redirecione (user: Usuario | Admin ) {
 
     // Redireciona para a área Usuario
 }
+
+
+// Criando interface. O simbolo ? significa que pode ou não acontecer
+
+interface Crianca {
+    nome: string,
+    idade: number,
+    parqueFavorito?: string //Pode ou não acontecer ou 'ter' (opcional)
+}
+
+const crianca: Crianca = {
+    nome: 'Sofia',
+    idade: 1
+}
+
+class Employee {
+    readonly emptCode: number; // Propriedade somente de leitura (não é possivel alterar)
+    emptName: string
+
+    constructor ( code: number, name: string ){
+        this.emptCode = code
+        this.emptName = name
+    }
+}
+
+let emp = new Employee(10, 'Leo')
+emp.emptName = 'Sofia'
+
+
+
+interface Estudante {
+    nome: string,
+    idade: number
+}
+
+interface Estudante {
+    serie: string
+}
+
+
+$.fn.extend({
+    novaFuncao() {
+        console.log('Chamou nova função')
+    }
+})
+
+$('input').novaFuncao()
